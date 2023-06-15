@@ -4,8 +4,11 @@ import * as Icons from "@acme/ui/icons";
 
 import { SiteFooter } from "~/components/footer";
 import { UserNav } from "~/components/user-nav";
+import { api } from "~/trpc/server";
+import { ProjectSwitcher } from "./_components/project-switcher";
 import { Search } from "./_components/search";
 import { WorkspaceSwitcher } from "./_components/workspace-switcher";
+import { Suspense } from "react";
 
 export default function DashboardLayout(props: { children: React.ReactNode }) {
   return (
@@ -20,6 +23,11 @@ export default function DashboardLayout(props: { children: React.ReactNode }) {
           </span>
           <WorkspaceSwitcher />
           {/* <MainNav className="mx-6" /> */}
+          <Suspense>
+            <ProjectSwitcher
+              projectsPromise={api.project.listByActiveWorkspace.query()}
+            />
+          </Suspense>
           <div className="ml-auto flex items-center space-x-4">
             <Search />
             <UserNav />
