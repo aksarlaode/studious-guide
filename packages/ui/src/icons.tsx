@@ -3,7 +3,9 @@ import type { Icon as LucideIcon } from "lucide-react";
 
 export type Icon = LucideIcon;
 
+export const Laptop = Lucide.Laptop;
 export const Logo = Lucide.Command;
+export const Dashboard = Lucide.Activity;
 export const Close = Lucide.X;
 export const Spinner = Lucide.Loader2;
 export const ChevronLeft = Lucide.ChevronLeft;
