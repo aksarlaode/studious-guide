@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/*@layer base {
   :root {
     --background: 0deg 0% 100%;
     --foreground: 222.2deg 47.4% 11.2%;
@@ -79,4 +79,4 @@
   .container {
     @apply max-sm:px-4;
   }
-}
+}*/

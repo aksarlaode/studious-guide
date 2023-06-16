@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 
 import * as Icons from "@acme/ui/icons";
@@ -8,17 +9,16 @@ import { api } from "~/trpc/server";
 import { ProjectSwitcher } from "./_components/project-switcher";
 import { Search } from "./_components/search";
 import { WorkspaceSwitcher } from "./_components/workspace-switcher";
-import { Suspense } from "react";
 
 export default function DashboardLayout(props: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen overflow-hidden rounded-[0.5rem] bg-background">
+    <div className="bg-background min-h-screen overflow-hidden rounded-[0.5rem]">
       <nav className="border-b">
         <div className="flex h-16 items-center px-4 md:px-8">
           <Link href="/">
             <Icons.Logo />
           </Link>
-          <span className="mx-2 text-lg font-bold text-muted-foreground">
+          <span className="text-muted-foreground mx-2 text-lg font-bold">
             /
           </span>
           <WorkspaceSwitcher />

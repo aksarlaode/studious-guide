@@ -68,11 +68,11 @@ export default function DashboardPage(props: {
                 <CardTitle className="text-sm font-medium">
                   Total Revenue
                 </CardTitle>
-                <DollarSign className="h-4 w-4 text-muted-foreground" />
+                <DollarSign className="text-muted-foreground h-4 w-4" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">$45,231.89</div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-muted-foreground text-xs">
                   +20.1% from last month
                 </p>
               </CardContent>
@@ -82,11 +82,11 @@ export default function DashboardPage(props: {
                 <CardTitle className="text-sm font-medium">
                   Subscriptions
                 </CardTitle>
-                <Users className="h-4 w-4 text-muted-foreground" />
+                <Users className="text-muted-foreground h-4 w-4" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">+2350</div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-muted-foreground text-xs">
                   +180.1% from last month
                 </p>
               </CardContent>
@@ -94,11 +94,11 @@ export default function DashboardPage(props: {
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                 <CardTitle className="text-sm font-medium">Sales</CardTitle>
-                <CreditCard className="h-4 w-4 text-muted-foreground" />
+                <CreditCard className="text-muted-foreground h-4 w-4" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">+12,234</div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-muted-foreground text-xs">
                   +19% from last month
                 </p>
               </CardContent>
@@ -108,11 +108,11 @@ export default function DashboardPage(props: {
                 <CardTitle className="text-sm font-medium">
                   Active Now
                 </CardTitle>
-                <Activity className="h-4 w-4 text-muted-foreground" />
+                <Activity className="text-muted-foreground h-4 w-4" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">+573</div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-muted-foreground text-xs">
                   +201 since last hour
                 </p>
               </CardContent>
@@ -137,7 +137,10 @@ export default function DashboardPage(props: {
                 />
               }
             >
-              <RecentIngestions projectId={projectId} workspaceId={workspaceId} />
+              <RecentIngestions
+                projectId={projectId}
+                workspaceId={workspaceId}
+              />
             </Suspense>
           </div>
         </TabsContent>
@@ -147,24 +150,26 @@ export default function DashboardPage(props: {
 }
 
 function IngestionCard(props: {
-  projectId: string,
-  workspaceId: string,
-  ingestion: RouterOutputs["ingestion"]["list"][number]
+  projectId: string;
+  workspaceId: string;
+  ingestion: RouterOutputs["ingestion"]["list"][number];
 }) {
-  const { ingestion }=props
+  const { ingestion } = props;
   const { adds, subs } = ingestion;
 
   const N_SQUARES = 5;
   const addSquares = Math.round((adds / (adds + subs)) * N_SQUARES);
 
-  const truncateHash = ingestion.hash.slice(0, 15)
+  const truncateHash = ingestion.hash.slice(0, 15);
 
   return (
-    <Link href={`${props.workspaceId}/${props.projectId}/ingestions/${ingestion.id}`}>
-      <div className="flex items-center rounded p-1 hover:bg-muted">
+    <Link
+      href={`${props.workspaceId}/${props.projectId}/ingestions/${ingestion.id}`}
+    >
+      <div className="hover:bg-muted flex items-center rounded p-1">
         <div className="space-y-1">
           <p className="text-sm font-medium leading-none">{truncateHash}</p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             {formatRelative(ingestion.createdAt, new Date())}
           </p>
         </div>
@@ -192,9 +197,9 @@ function IngestionCard(props: {
   );
 }
 
-async function RecentIngestions(props: { 
-  projectId: string,
-  workspaceId: string 
+async function RecentIngestions(props: {
+  projectId: string;
+  workspaceId: string;
 }) {
   const ingestions = await api.ingestion.list.query({
     projectId: props.projectId,
@@ -212,7 +217,7 @@ async function RecentIngestions(props: {
       </CardHeader>
       <CardContent>
         {ingestions.map((ingestion) => (
-          <IngestionCard 
+          <IngestionCard
             key={ingestion.id}
             ingestion={ingestion}
             projectId={props.projectId}

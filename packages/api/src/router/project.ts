@@ -220,9 +220,9 @@ export const projectRouter = createTRPCRouter({
             cmpr("id", "=", id),
             orgIds.length > 0
               ? or([
-                cmpr("userId", "=", userId),
-                cmpr("organizationId", "in", orgIds),
-              ])
+                  cmpr("userId", "=", userId),
+                  cmpr("organizationId", "in", orgIds),
+                ])
               : cmpr("userId", "=", userId),
           ]),
         );

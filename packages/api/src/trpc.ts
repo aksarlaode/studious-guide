@@ -31,7 +31,7 @@ import { db } from "@acme/db";
 type CreateContextOptions = {
   auth: SignedInAuthObject | SignedOutAuthObject | null;
   apiKey?: string | null;
-  req?: NextRequest
+  req?: NextRequest;
 };
 
 /**
@@ -55,14 +55,14 @@ export const createInnerTRPCContext = (opts: CreateContextOptions) => {
  * process every request that goes through your tRPC endpoint
  * @link https://trpc.io/docs/context
  */
-export const createTRPCContext = (opts: { req:NextRequest }) => {
+export const createTRPCContext = (opts: { req: NextRequest }) => {
   const auth = getAuth(opts.req);
   const apiKey = opts.req.headers.get("x-acme-api-key");
 
   return createInnerTRPCContext({
     auth,
     apiKey,
-    req: opts.req
+    req: opts.req,
   });
 };
 
@@ -122,7 +122,7 @@ const enforceUserIsAuthed = t.middleware(({ ctx, next }) => {
       auth: {
         ...ctx.auth,
         userId: ctx.auth.userId,
-      }
+      },
     },
   });
 });
@@ -194,9 +194,9 @@ const enforceApiKey = t.middleware(async ({ ctx, next }) => {
     .execute();
 
   return next({
-    ctx: { 
+    ctx: {
       apiKey,
-    }
+    },
   });
 });
 

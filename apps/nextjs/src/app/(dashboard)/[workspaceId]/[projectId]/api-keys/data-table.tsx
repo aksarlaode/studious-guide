@@ -126,7 +126,7 @@ const columns = [
     cell: (t) => {
       if (t.row.original.revokedAt !== null) {
         return (
-          <div className="flex flex-col text-destructive">
+          <div className="text-destructive flex flex-col">
             <span>Revoked</span>
             <span>{format(t.row.original.revokedAt, "yyyy-MM-dd")}</span>
           </div>
@@ -140,7 +140,7 @@ const columns = [
 
       if (value < new Date()) {
         return (
-          <div className="flex flex-col text-destructive">
+          <div className="text-destructive flex flex-col">
             <span>Expired</span>
             <span>{format(value, "yyyy-MM-dd")}</span>
           </div>

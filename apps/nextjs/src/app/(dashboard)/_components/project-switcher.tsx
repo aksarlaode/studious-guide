@@ -50,7 +50,7 @@ export function ProjectSwitcher(props: {
 
   return (
     <>
-      <span className="mx-2 text-lg font-bold text-muted-foreground">/</span>
+      <span className="text-muted-foreground mx-2 text-lg font-bold">/</span>
 
       <Popover open={switcherOpen} onOpenChange={setSwitcherOpen}>
         <PopoverTrigger asChild>

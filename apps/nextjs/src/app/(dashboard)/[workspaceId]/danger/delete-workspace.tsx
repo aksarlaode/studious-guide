@@ -48,7 +48,7 @@ export function DeleteWorkspace() {
             <Button variant="destructive">{title}</Button>
           </DialogTrigger>
           {!orgId && (
-            <span className="mr-auto px-2 text-sm text-muted-foreground">
+            <span className="text-muted-foreground mr-auto px-2 text-sm">
               You can not delete your personal workspace
             </span>
           )}
@@ -57,7 +57,7 @@ export function DeleteWorkspace() {
               <DialogTitle>{title}</DialogTitle>
               <DialogDescription>{description}</DialogDescription>
             </DialogHeader>
-            <div className="flex items-center font-bold text-destructive">
+            <div className="text-destructive flex items-center font-bold">
               <Icons.Warning className="mr-2 h-6 w-6" />
               <p>This action can not be reverted</p>
             </div>

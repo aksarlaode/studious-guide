@@ -50,7 +50,7 @@ export function OrganizationMembers(props: {
   return (
     <Table>
       <TableHeader>
-        <TableRow className="pointer-events-none bg-muted">
+        <TableRow className="bg-muted pointer-events-none">
           <TableHead>Name</TableHead>
           <TableHead>Joined at</TableHead>
           <TableHead>Role</TableHead>
@@ -67,7 +67,7 @@ export function OrganizationMembers(props: {
               </Avatar>
               <div className="flex flex-col">
                 <span>{member.name}</span>
-                <span className="text-sm text-muted-foreground">
+                <span className="text-muted-foreground text-sm">
                   {member.email}
                 </span>
               </div>

@@ -3,10 +3,10 @@ import { TRPCError } from "@trpc/server";
 import * as z from "zod";
 
 import { inviteOrgMemberSchema } from "../../validators";
-import { 
+import {
   createTRPCRouter,
-  protectedAdminProcedure, 
-  protectedOrgProcedure 
+  protectedAdminProcedure,
+  protectedOrgProcedure,
 } from "../trpc";
 
 export const organizationsRouter = createTRPCRouter({

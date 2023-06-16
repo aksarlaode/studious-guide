@@ -1,4 +1,5 @@
 import { clerkClient } from "@clerk/nextjs";
+
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 export const authRouter = createTRPCRouter({

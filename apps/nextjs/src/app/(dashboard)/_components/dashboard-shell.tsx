@@ -12,7 +12,7 @@ export function DashboardShell(props: {
           <h1 className="text-xl font-semibold leading-none tracking-tight">
             {props.title}
           </h1>
-          <h2 className="text-base text-muted-foreground">
+          <h2 className="text-muted-foreground text-base">
             {props.description}
           </h2>
         </div>

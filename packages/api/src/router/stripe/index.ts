@@ -106,7 +106,7 @@ export const stripeRouter = createTRPCRouter({
         subscription_data: {
           metadata: { userId, organizationName: orgName },
         },
-        success_url: `${env.NEXTJS_URL}/dashboard`, // TODO: Maybe onboarding?        
+        success_url: `${env.NEXTJS_URL}/dashboard`, // TODO: Maybe onboarding?
         cancel_url: env.NEXTJS_URL,
         line_items: [{ price: planId, quantity: 1 }],
       });
