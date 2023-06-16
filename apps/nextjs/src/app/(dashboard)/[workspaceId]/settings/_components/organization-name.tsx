@@ -51,7 +51,7 @@ export function OrganizationName(props: { name: string; orgId: string }) {
           <Button type="submit" className="ml-auto">
             {updating && (
               <div className="mr-1" role="status">
-                <div className="border-background h-3 w-3 animate-spin rounded-full border-2 border-r-transparent" />
+                <div className="h-3 w-3 animate-spin rounded-full border-2 border-background border-r-transparent" />
               </div>
             )}
             Save

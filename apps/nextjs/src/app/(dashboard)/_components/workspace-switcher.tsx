@@ -266,7 +266,7 @@ function NewOrganizationDialog(props: { closeDialog: () => void }) {
                   <FormLabel>Subscription plan *</FormLabel>
                   <Link
                     href="/pricing"
-                    className="text-muted-foreground text-xs hover:underline"
+                    className="text-xs text-muted-foreground hover:underline"
                   >
                     What&apos;s included in each plan?
                   </Link>
