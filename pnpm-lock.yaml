@@ -266,7 +266,7 @@ importers:
         specifier: ^0.1.0
         version: link:../db
       '@clerk/nextjs':
-        specifier: ^4.21.13
+        specifier: ^4.21.14
         version: 4.21.14(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
       '@t3-oss/env-nextjs':
         specifier: ^0.6.0
