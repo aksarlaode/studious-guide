@@ -3,8 +3,14 @@
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 
+
+
 import { cn } from "@acme/ui";
 import * as Icons from "@acme/ui/icons";
+
+
+
+
 
 const workspaceItems = [
   {
@@ -44,6 +50,11 @@ const projectItems = [
     title: "Danger Zone",
     href: "/danger",
     icon: Icons.Warning,
+  },
+  {
+    title: "Settings",
+    href: "/settings",
+    icon: Icons.Settings,
   },
 ] as const;
 
