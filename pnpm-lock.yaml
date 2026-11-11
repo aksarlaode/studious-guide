@@ -155,7 +155,7 @@ importers:
         version: 4.21.14(next@13.4.8)(react-dom@18.2.0)(react@18.2.0)
       '@hookform/resolvers':
         specifier: ^3.1.1
-        version: 3.1.1(react-hook-form@7.45.1)
+        version: 3.1.1(react-hook-form@7.92.0)
       '@next/mdx':
         specifier: ^13.4.8
         version: 13.4.8
@@ -202,8 +202,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-hook-form:
-        specifier: ^7.45.1
-        version: 7.45.1(react@18.2.0)
+        specifier: ^7.92.0
+        version: 7.92.0(@types/react@18.2.14)(react@18.2.0)
       react-image-crop:
         specifier: ^10.1.5
         version: 10.1.5(react@18.2.0)
@@ -471,8 +471,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-hook-form:
-        specifier: ^7.45.1
-        version: 7.45.1(react@18.2.0)
+        specifier: ^7.92.0
+        version: 7.92.0(@types/react@18.2.14)(react@18.2.0)
       tailwindcss:
         specifier: ^3.3.2
         version: 3.3.2
@@ -867,6 +867,7 @@ packages:
   /@babel/plugin-proposal-numeric-separator@7.18.6(@babel/core@7.22.1):
     resolution: {integrity: sha512-ozlZFogPqoLm8WBr5Z8UckIoE4YQ5KESVcNudyXOR8uqIkliTEgJ3RoketfG6pmzLdeZF0H/wjE9/cCEitBl7Q==}
     engines: {node: '>=6.9.0'}
+    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-numeric-separator instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
     dependencies:
@@ -2669,12 +2670,12 @@ packages:
       '@hapi/hoek': 9.3.0
     dev: false
 
-  /@hookform/resolvers@3.1.1(react-hook-form@7.45.1):
+  /@hookform/resolvers@3.1.1(react-hook-form@7.92.0):
     resolution: {integrity: sha512-tS16bAUkqjITNSvbJuO1x7MXbn7Oe8ZziDTJdA9mMvsoYthnOOiznOTGBYwbdlYBgU+tgpI/BtTU3paRbCuSlg==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
-      react-hook-form: 7.45.1(react@18.2.0)
+      react-hook-form: 7.92.0(@types/react@18.2.14)(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.10:
@@ -9453,6 +9454,7 @@ packages:
   /metro-react-native-babel-preset@0.76.5(@babel/core@7.22.1):
     resolution: {integrity: sha512-IlVKeTon5fef77rQ6WreSmrabmbc3dEsLwr/sL80fYjobjsD8FRCnOlbaJdgUf2SMJmSIoawgjh5Yeebv+gJzg==}
     engines: {node: '>=16'}
+    deprecated: Use @react-native/babel-preset instead
     peerDependencies:
       '@babel/core': '*'
     dependencies:
@@ -10115,6 +10117,7 @@ packages:
 
   /node-abort-controller@3.1.1:
     resolution: {integrity: sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==}
+    deprecated: This package is no longer needed on supported Node.js versions. Node.js 16+ includes AbortController and AbortSignal as built-in globals. All Node.js versions requiring this polyfill are end-of-life. Use the built-in globals instead.
     dev: false
 
   /node-dir@0.1.17:
@@ -11155,12 +11158,17 @@ packages:
       shallowequal: 1.1.0
     dev: false
 
-  /react-hook-form@7.45.1(react@18.2.0):
-    resolution: {integrity: sha512-6dWoFJwycbuFfw/iKMcl+RdAOAOHDiF11KWYhNDRN/OkUt+Di5qsZHwA0OwsVnu9y135gkHpTw9DJA+WzCeR9w==}
-    engines: {node: '>=12.22.0'}
+  /react-hook-form@7.92.0(@types/react@18.2.14)(react@18.2.0):
+    resolution: {integrity: sha512-O5ILyY5fYHN7N13Pfxpe55KboyNFsJdM03BHpshQkClJd8raugiAUGY7VjifITrfhVxyx81ko25azXCoayhf1w==}
+    engines: {node: '>=18.0.0'}
     peerDependencies:
-      react: ^16.8.0 || ^17 || ^18
+      '@types/react': '*'
+      react: ^16.8.0 || ^17 || ^18 || ^19
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
     dependencies:
+      '@types/react': 18.2.14
       react: 18.2.0
 
   /react-image-crop@10.1.5(react@18.2.0):
